@@ -1,0 +1,89 @@
+const mongoose=require('mongoose')
+
+try
+{
+    const schema = mongoose.Schema(
+        {
+            email:
+            {
+                type:String,
+                require:true,
+                minlength:5,
+            },
+            name:
+            {
+                type:String,
+                require:true,
+                minlength:2
+            },
+            landmark:
+            {
+                type:String,
+                require:true,
+                minlength:2
+            },
+            address:
+            {
+                type:String,
+                require:true,
+                minlength:2
+            },
+            city:
+            {
+                type:String,
+                require:true,
+                minlength:2
+            },
+            complaint_type:
+            {
+                type:String,
+                require:true
+            },
+            complaint:
+            {
+                type:String,
+                require:true,
+                minlength:2
+            },
+            complaint_status:
+            {
+                type:String,
+                default:"Pending"
+            },
+            complaint_level:
+            {
+                type:String,
+                require:true
+            },
+            complaint_image:
+            {
+                type:String,
+                require:true
+            },
+            reason:
+            {
+                type:String,
+                default:""
+            },
+            solution:
+            {
+                type:String,
+                default:""
+            },
+            officer_proof:
+            {
+                type:String,
+                default:""
+            },
+        },
+        {
+            timestamps:true
+        }
+    )                            //give collection name...
+    module.exports = mongoose.model("complaints",schema)
+}
+catch(error)
+{
+    res.status(404).send(error)
+    console.log(error)
+}

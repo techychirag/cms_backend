@@ -1,0 +1,22 @@
+{
+  "name": "online_complain_management_system",
+  "version": "1.0.0",
+  "description": "This is Online Complain Management System Project",
+  "main": "route.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Chirag Rathod",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.11.14",
+    "multer": "^1.4.2",
+    "sweetalert2": "^10.14.0"
+  }
+}
