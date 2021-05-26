@@ -2,7 +2,7 @@
   "name": "online_complain_management_system",
   "version": "1.0.0",
   "description": "This is Online Complain Management System Project",
-  "main": "route.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
