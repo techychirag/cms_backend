@@ -156,7 +156,7 @@ router.post('/complaint', function (req, res) {
             else if (err)
             {
                 console.log(err)
-                res.status(402).send({err:"Please insert Only JPEG and PNG File."})
+                res.status(402).send({err:err})
             }
             else
             {
