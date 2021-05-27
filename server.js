@@ -16,9 +16,6 @@ mongoose.connect("mongodb+srv://Chirag:mystar3333@cluster0.thc18.mongodb.net/CMS
         app.use('/officer_proof_uploads',express.static(__dirname + '/officer_proof_uploads'))
 
         app.use(express.static(path.join(__dirname,'public')))
-        app.get('*',(req,res)=>{
-            res.sendFile(path.join(__dirname,'public/index.html'))
-        })
         app.use("/api",route)
 
         app.listen(process.env.PORT || 3000,()=>{
