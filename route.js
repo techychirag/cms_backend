@@ -140,7 +140,7 @@ router.post("/admlogin",async (req,res)=>{
 
 
 
-router.post('/complaint', function (req, res) {
+router.post('/complaint',auth, function (req, res) {
     upload(req, res,async function (err)
     {
         try
