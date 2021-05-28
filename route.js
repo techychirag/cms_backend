@@ -102,7 +102,7 @@ router.post("/admlogin",async (req,res)=>{
         const admin= await ModelAdmin.findOne({email:Admin.Email})
         if(!admin)
         {
-            return res.send("<h2>Sorry admin does not exist...!!</h2>")
+            return res.status(400).send("<h2>Sorry user does not exist...!!</h2>")
         }
         function compare(Admin_psw,admin_psw)
         {
@@ -115,7 +115,7 @@ router.post("/admlogin",async (req,res)=>{
         console.log("compare ")
         if(!isValid)
         {
-            res.send("Password wrong...")
+            res.status(401).send("Password wrong...")
         }
         else
         {
@@ -379,14 +379,14 @@ router.post("/officer_login",async (req,res)=>{
         const officer= await ModelOfficer.findOne({email:Officer.Email,location:Officer.Location,department:Officer.Department})
         if(!officer)
         {
-            return res.send("<h2>Sorry user does not exist...!!</h2>")
+            return res.status(400).send("<h2>Sorry user does not exist...!!</h2>")
         }
 
         const isValid = await bcrypt.compare(Officer.Password,officer.password)
 
         if(!isValid)
         {
-            res.send("Password wrong...")
+            res.status(401).send("Password wrong...")
         }
         else
         {
